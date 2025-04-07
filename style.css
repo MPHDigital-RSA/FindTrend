@@ -252,17 +252,21 @@
 @layer header {
 
     header {
-        padding-block-start: calc(24/16*1rem);
+        padding-block-start: 24px;
+        padding-block-end: 24px;
         background-color: transparent;
-        position: absolute;
+        position: fixed;
+        background-color: var(--c-black);
+        border-bottom: 2px solid var(--c-light-black);
         width: 100%;
+        z-index: 99;
 
         .header__logo {
             display: flex;
             align-items: center;
             gap: 8px;
             position: relative;
-            z-index: 20;
+            z-index: 99;
         }
 
         .header__logo:hover {
@@ -319,12 +323,13 @@
 
     header.open {
 
-        position: absolute;
+        position: fixed;
         z-index: 99;
 
         #close {
             display: block;
             position: relative;
+            z-index: 99;
         }
 
         #hamburger {
@@ -342,6 +347,7 @@
             padding-block-start: 128px;
             height: 500px;
             box-shadow: 0 0 10px #181818bc;
+            z-index: 90;
 
             ul {
                 display: grid;
@@ -362,7 +368,18 @@
             justify-content: center;
             border-top: 2px solid var(--social-card-bg);
             padding-block-start: 30px;
+            z-index: 99;
         }
+    }
+
+    header.open::after {
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.791);
+        height: 100vh;
+        right: 0;
+        left: 0;
+        z-index: 0;
     }
 
 }
@@ -534,9 +551,9 @@
             }
 
             .deco-1 {
-                top: -45px;
+                top: -50px;
                 right: 0;
-                rotate: 10deg;
+                rotate: 5deg;
 
                 p {
                     width: 10ch;
@@ -547,6 +564,10 @@
                     right: -100px;
                     rotate: 50deg;
 
+                }
+
+                @media(width >=calc(1100/16 * 1rem)) {
+                    right: -130px;
                 }
             }
 
@@ -567,6 +588,10 @@
                     left: -100px;
                     rotate: 30deg;
 
+                }
+
+                @media(width >=calc(1100/16 * 1rem)) {
+                    left: -130px;
                 }
 
             }
