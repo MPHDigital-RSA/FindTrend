@@ -337,13 +337,13 @@
 
         .hero__social-cards {
 
-
             display: grid;
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 0px;
 
             @media (width >=calc(700 / 16 * 1rem)) {
                 grid-template-columns: 1fr 1fr;
+                gap: 10px;
             }
 
             @media (width >=calc(1100 / 16 * 1rem)) {
@@ -361,30 +361,72 @@
                 gap: 14px;
                 width: 293px;
                 overflow: hidden;
+                box-shadow: 0 0 10px black;
+
+                p {
+                    color: var(--c-white);
+                    font-size: calc(14/16*1rem);
+                    margin: 0;
+                    width: 400px;
+                    text-align: left;
+                    font-weight: 600;
+                }
+
+                .hero__cross {
+                    position: absolute;
+                    background-image: linear-gradient(to right, #181818d1, var(--c-light-black));
+                    width: 72px;
+                    top: 0;
+                    bottom: 0;
+                    /* left: 293px; */
+                    left: 223px;
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+
+                &:nth-child(1) {
+                    rotate: -3deg;
+                    position: relative;
+                    z-index: 40;
+
+                    @media (width >=calc(700 / 16 * 1rem)) {
+                        rotate: unset;
+                    }
+                }
+
+                &:nth-child(2) {
+                    rotate: 3deg;
+                    position: relative;
+                    z-index: 35;
+
+                    @media (width >=calc(700 / 16 * 1rem)) {
+                        rotate: unset;
+                    }
+                }
+
+                &:nth-child(3) {
+                    rotate: -2deg;
+                    position: relative;
+                    z-index: 30;
+
+                    @media (width >=calc(700 / 16 * 1rem)) {
+                        rotate: unset;
+                    }
+                }
+
+                &:nth-child(4) {
+                    rotate: 3deg;
+                    position: relative;
+                    z-index: 25;
+
+                    @media (width >=calc(700 / 16 * 1rem)) {
+                        rotate: unset;
+                    }
+                }
             }
 
-
-            p {
-                color: var(--c-white);
-                font-size: calc(14/16*1rem);
-                margin: 0;
-                width: 400px;
-                text-align: left;
-            }
-
-            .hero__cross {
-                position: absolute;
-                background-image: linear-gradient(to right, #181818d1, var(--c-light-black));
-                width: 72px;
-                top: 0;
-                bottom: 0;
-                /* left: 293px; */
-                left: 223px;
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
 
             @media (width >=calc(700 / 16 * 1rem)) {
                 grid-template-columns: 1fr 1fr;
