@@ -786,8 +786,23 @@
                     border: none;
                     font-size: 16px;
                     font-weight: 600;
-                    margin-block-start: 20px;
+                    margin-block-start: 40px;
                 }
+            }
+
+            .pricing__card.popular {
+
+                background-color: var(--c-lime);
+
+                .pricing__card-header {
+                    border-color: rgba(0, 0, 0, 0.044);
+                }
+
+                .pricing__card-button {
+                    background-color: var(--c-black);
+                    color: var(--c-white);
+                }
+
             }
         }
     }
