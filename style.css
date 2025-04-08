@@ -726,7 +726,7 @@
 
             @media(width >=calc(1100 / 16 * 1rem)) {
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: 40px;
+                gap: 20px;
             }
 
 
@@ -736,6 +736,8 @@
                 padding: 30px;
                 border-radius: 15px;
 
+                display: flex;
+                flex-direction: column;
 
                 .pricing__card-header {
                     display: grid;
@@ -752,6 +754,7 @@
                 }
 
                 .pricing__card-content {
+                    flex-grow: 1;
 
                     .pricing__card-price {
                         font-size: 60px;
@@ -773,7 +776,12 @@
                             gap: 10px;
                             align-items: center;
 
-                            .pricing__feature-description {}
+                            .pricing__feature-description {
+
+                                @media(width >=calc(1100 / 16 * 1rem)) {
+                                    font-size: 13px;
+                                }
+                            }
                         }
                     }
                 }
